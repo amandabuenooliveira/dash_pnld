@@ -6,10 +6,10 @@ import matplotlib.pyplot as plt
 
 st.set_page_config(layout='wide',
                    page_icon=':book:',
-                   page_title='PNLD - Ensino Médio',
                    initial_sidebar_state='expanded',
                    )
-st.markdown("<h1 style='text-align: center; color: darkblue;'>PNLD - Ensino Médio</h1>", unsafe_allow_html=True)
+
+st.markdown("<h1 style='text-align: center; color: gray;'>PNLD - Ensino Médio</h1>", unsafe_allow_html=True)
 st.title('PNLD - Ensino Médio')
 
 st.write("Este relatório apresenta dados sobre escolas de Ensino Médio no Brasil.")
