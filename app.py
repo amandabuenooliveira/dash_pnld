@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-
+st.image(logo.png.png, width=150)
 
 st.set_page_config(layout='wide',
                    page_icon=':book:',
