@@ -1,8 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt # type: ignore
-import plotly.express as px # type: ignore
+
 
 st.title('PNLD - Ensino Médio')
 
