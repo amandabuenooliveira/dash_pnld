@@ -57,11 +57,11 @@ st.bar_chart(df.set_index('uf')['escolas'])
 st.markdown("<h3 style='color: #4D4D4D;'>Alunado Médio por UF</h3>", unsafe_allow_html=True)
 
 # Criar um gráfico de barras com matplotlib e personalizar a cor
-fig, ax = plt.subplots(figsize=(10, 6))
+fig, ax = plt.subplots(figsize=(10, 3))
 ax.bar(df['uf'], df['alunado medio'], color='#93C83D')  # Cor personalizada
 ax.set_xlabel('UF', fontsize=12)
-ax.set_ylabel('Alunado Médio', fontsize=12)
-ax.set_title('Alunado Médio por UF', fontsize=14, color='#4D4D4D')  # Título com cor personalizada
+ax.set_ylabel('Alunado Médio', fontsize=5)
+ax.set_title('Alunado Médio por UF', fontsize=5, color='#4D4D4D')  # Título com cor personalizada
 
 # Exibir o gráfico no Streamlit
 st.pyplot(fig)
