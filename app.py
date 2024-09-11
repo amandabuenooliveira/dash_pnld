@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
+import plotly.express as px
 
 st.title('PNLD - Ensino Médio')
 
@@ -16,7 +18,19 @@ st.metric(label="Municípios com EM", value="5.570")
 
 st.metric(label="Estados com EM", value="27")
 
-st.sidebar.write("Filtros")
-st.sidebar.write("Escolha o estado")
-estado = st.sidebar.selectbox('Estado', ['SP', 'RJ', 'MG', 'RS', 'PR'])
+
+# 1. Carregar o arquivo Excel
+@st.cache_data
+def load_data():
+    # Carrega o arquivo Excel (substitua pelo nome do seu arquivo)
+    file_path = 'C:\Users\amanda.bueno\Desktop\meufi\dash_pnld\20240910_PNLD.xlsx'
+    data = pd.read_excel(file_path)
+    return data
+
+# Carregar os dados
+df = load_data()
+
+# Exibir o dataframe no Streamlit
+st.subheader('Dados do Excel:')
+st.dataframe(df)
 
