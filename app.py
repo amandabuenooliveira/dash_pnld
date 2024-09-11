@@ -18,19 +18,7 @@ st.metric(label="Municípios com EM", value="5.570")
 st.metric(label="Estados com EM", value="27")
 
 
-# 1. Carregar o arquivo Excel
-@st.cache_data
-def load_data():
-    # Carrega o arquivo Excel (substitua pelo nome do seu arquivo)
-    file_path = '20240910_PNLD.xlsx'
-    data = pd.read_excel(file_path)
-    return data
 
-# Carregar os dados
-df = load_data()
 
-# Exibir o dataframe no Streamlit
-st.subheader('Dados do Excel:')
-st.dataframe(df)
 
 
