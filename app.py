@@ -3,7 +3,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-
+# Exibir o logo no topo da página
+st.image('logo.png', width=150)  # Ajuste o tamanho conforme necessário
 
 st.set_page_config(layout='wide',
                    page_icon=':book:',
