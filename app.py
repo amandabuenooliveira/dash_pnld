@@ -39,29 +39,14 @@ data = {
 df = pd.DataFrame(data)
 
 # Tabela estilizada
-st.markdown("<h3 style='color: darkblue;'>Tabela de Escolas e Alunado Médio por Estado (UF)</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='color: black;'>Tabela de Escolas e Alunado Médio por Estado (UF)</h3>", unsafe_allow_html=True)
 st.dataframe(df.style.format({"alunado medio": "{:,.0f}", "escolas": "{:,.0f}"}), hide_index=True)
 
 
 # Gráficos de barras
-st.markdown("<h3 style='color: darkblue;'>Alunado Médio por UF</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='color: black;'>Alunado Médio por UF</h3>", unsafe_allow_html=True)
 st.bar_chart(df.set_index('uf')['alunado medio'])  
 
-st.markdown("<h3 style='color: darkblue;'>Escolas por UF</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='color: black;'>Escolas por UF</h3>", unsafe_allow_html=True)
 st.bar_chart(df.set_index('uf')['escolas'])
 
-
-
-
-# Alterar a cor do título para cinza escuro
-st.markdown("<h3 style='color: #4D4D4D;'>Alunado Médio por UF</h3>", unsafe_allow_html=True)
-
-# Criar um gráfico de barras com matplotlib e personalizar a cor
-fig, ax = plt.subplots(figsize=(10, 3))
-ax.bar(df['uf'], df['alunado medio'], color='#93C83D')  # Cor personalizada
-ax.set_xlabel('UF', fontsize=12)
-ax.set_ylabel('Alunado Médio', fontsize=5)
-ax.set_title('Alunado Médio por UF', fontsize=5, color='#4D4D4D')  # Título com cor personalizada
-
-# Exibir o gráfico no Streamlit
-st.pyplot(fig)
