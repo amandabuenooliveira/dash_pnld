@@ -51,7 +51,7 @@ st.dataframe(df, hide_index=True)
 
 # Gráficos de barras
 st.markdown("<h3 style='color: darkblue;'>Alunado Médio por UF</h3>", unsafe_allow_html=True)
-st.bar_chart(df.set_index('uf')['alunado medio'])
+st.bar_chart(df.set_index('uf')['alunado medio'], color='93C83D')  
 
 st.markdown("<h3 style='color: darkblue;'>Escolas por UF</h3>", unsafe_allow_html=True)
 st.bar_chart(df.set_index('uf')['escolas'])
