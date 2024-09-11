@@ -33,7 +33,7 @@ st.title('Informações de Escolas e Alunado Médio por UF')
 
 # Exibir a tabela no Streamlit
 st.subheader('Tabela de Escolas e Alunado Médio por Estado (UF)')
-st.dataframe(df)
+st.dataframe(df, hide_index=True)
 
 # Exibir um gráfico de barras 
 st.subheader('Alunado Médio por UF')
