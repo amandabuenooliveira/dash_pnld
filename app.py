@@ -2,13 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from PIL import Image
 
-# Carregar a imagem do logo
-logo = Image.open('logo.png')
-
-# Exibir o logo no topo da página
-st.image(logo, width=150)  # Ajuste o 'width' conforme necessário
 
 
 st.set_page_config(layout='wide',
