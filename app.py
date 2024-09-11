@@ -9,8 +9,8 @@ st.set_page_config(layout='wide',
                    initial_sidebar_state='expanded',
                    )
 
-st.markdown("<h1 style='text-align: center; color: gray;'>PNLD - Ensino Médio</h1>", unsafe_allow_html=True)
-st.title('PNLD - Ensino Médio')
+st.markdown("<h1 style='text-align: center;'>PNLD - Ensino Médio</h1>", unsafe_allow_html=True)
+
 
 st.write("Este relatório apresenta dados sobre escolas de Ensino Médio no Brasil.")
 
