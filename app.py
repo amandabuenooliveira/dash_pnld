@@ -40,6 +40,6 @@ st.bar_chart(df.set_index('uf')['alunado medio'])
 
 # Exibir um gráfico de barras 
 st.subheader('Gráfico de Barras - Escolas com Médio por UF')
-st.bar_chart(df.set_index('uf')['escola'])
+st.bar_chart(df.set_index('uf')['escolas'])
 
 
