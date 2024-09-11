@@ -34,10 +34,12 @@ st.title('Informações de Escolas e Alunado Médio por UF')
 st.subheader('Tabela de Escolas e Alunado Médio por Estado (UF)')
 st.dataframe(df)
 
-# Exibir um gráfico de barras (opcional)
+# Exibir um gráfico de barras 
 st.subheader('Gráfico de Barras - Alunado Médio por UF')
 st.bar_chart(df.set_index('uf')['alunado medio'])
 
-
+# Exibir um gráfico de barras 
+st.subheader('Gráfico de Barras - Escolas com Médio por UF')
+st.bar_chart(df.set_index('uf')['escola'])
 
 
