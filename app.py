@@ -4,6 +4,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
+st.set_page_config(layout='wide',
+                   page_icon=':book:',
+                   page_title='PNLD - Ensino Médio',
+                   initial_sidebar_state='expanded',
+                   )
+
 st.title('PNLD - Ensino Médio')
 
 st.write("Escolas do Brasil")
