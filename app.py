@@ -2,6 +2,13 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from PIL import Image
+
+# Carregar a imagem do logo
+logo = Image.open('logo.png')
+
+# Exibir o logo no topo da página
+st.image(logo, width=150)  # Ajuste o 'width' conforme necessário
 
 
 st.set_page_config(layout='wide',
@@ -44,9 +51,9 @@ st.dataframe(df.style.format({"alunado medio": "{:,.0f}", "escolas": "{:,.0f}"})
 
 
 # Gráficos de barras
-st.markdown("<h3 style='color: black;'>Alunado Médio por UF</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='color: black;'>Alunado Ensino Médio por UF</h3>", unsafe_allow_html=True)
 st.bar_chart(df.set_index('uf')['alunado medio'])  
 
-st.markdown("<h3 style='color: black;'>Escolas por UF</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='color: black;'>Escolas com Ensino Médio por UF</h3>", unsafe_allow_html=True)
 st.bar_chart(df.set_index('uf')['escolas'])
 
