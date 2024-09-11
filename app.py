@@ -9,10 +9,10 @@ st.set_page_config(layout='wide',
                    page_title='PNLD - Ensino Médio',
                    initial_sidebar_state='expanded',
                    )
-
+st.markdown("<h1 style='text-align: center; color: darkblue;'>PNLD - Ensino Médio</h1>", unsafe_allow_html=True)
 st.title('PNLD - Ensino Médio')
 
-st.write("Escolas do Brasil")
+st.write("Este relatório apresenta dados sobre escolas de Ensino Médio no Brasil.")
 
 
 
@@ -23,7 +23,10 @@ col3.metric("Escolas EM", "21.016")
 
 
 
-st.metric(label="Municípios com EM", value="5.290, nas 27 UF")
+st.metric(label="Municípios com EM", value="5.290")
+# Divisão visual
+st.markdown("---")
+
 
 # Dados da tabela
 data = {
@@ -35,42 +38,45 @@ data = {
 # Criar um DataFrame com os dados
 df = pd.DataFrame(data)
 
-# Título do app
-st.title('Informações de Escolas e Alunado Médio por UF')
+# Tabela estilizada
+st.markdown("<h3 style='color: darkblue;'>Tabela de Escolas e Alunado Médio por Estado (UF)</h3>", unsafe_allow_html=True)
+st.dataframe(df.style.format({"alunado medio": "{:,.0f}", "escolas": "{:,.0f}"}), hide_index=True)
+
+
+
 
 # Exibir a tabela no Streamlit
 st.subheader('Tabela de Escolas e Alunado Médio por Estado (UF)')
 st.dataframe(df, hide_index=True)
 
-# Exibir um gráfico de barras 
-st.subheader('Alunado Médio por UF')
+# Gráficos de barras
+st.markdown("<h3 style='color: darkblue;'>Alunado Médio por UF</h3>", unsafe_allow_html=True)
 st.bar_chart(df.set_index('uf')['alunado medio'])
 
-# Exibir um gráfico de barras 
-st.subheader('Escolas com Médio por UF')
+st.markdown("<h3 style='color: darkblue;'>Escolas por UF</h3>", unsafe_allow_html=True)
 st.bar_chart(df.set_index('uf')['escolas'])
 
-
-# Criar um gráfico com dois eixos y (um para escolas e outro para alunado médio)
-st.subheader('Gráfico de Barras - Escolas e Alunado Médio por UF')
-
-fig, ax1 = plt.subplots(figsize=(10, 6))
+# Gráfico combinado com dois eixos y
+st.markdown("<h3 style='color: darkblue;'>Comparação de Escolas e Alunado Médio por UF</h3>", unsafe_allow_html=True)
+fig, ax1 = plt.subplots(figsize=(12, 6))
 
 # Eixo y1 para o número de escolas
-ax1.bar(df['uf'], df['escolas'], color='b', label='Escolas')
-ax1.set_xlabel('UF')
-ax1.set_ylabel('Número de Escolas', color='b')
-ax1.tick_params(axis='y', labelcolor='b')
+ax1.bar(df['uf'], df['escolas'], color='lightblue', label='Escolas')
+ax1.set_xlabel('UF', fontsize=12)
+ax1.set_ylabel('Número de Escolas', color='blue', fontsize=12)
+ax1.tick_params(axis='y', labelcolor='blue')
+ax1.tick_params(axis='x', rotation=45)
 
-# Criar um segundo eixo y (compartilhando o mesmo eixo x)
+# Segundo eixo y para o alunado médio
 ax2 = ax1.twinx()
-ax2.plot(df['uf'], df['alunado medio'], color='r', marker='o', label='Alunado Médio')
-ax2.set_ylabel('Alunado Médio', color='r')
-ax2.tick_params(axis='y', labelcolor='r')
+ax2.plot(df['uf'], df['alunado medio'], color='darkred', marker='o', label='Alunado Médio', linewidth=2)
+ax2.set_ylabel('Alunado Médio', color='darkred', fontsize=12)
+ax2.tick_params(axis='y', labelcolor='darkred')
 
-# Exibir a legenda
+# Ajustar legendas e título
 ax1.legend(loc='upper left')
 ax2.legend(loc='upper right')
+ax1.set_title('Comparação de Escolas e Alunado Médio por UF', fontsize=14, fontweight='bold')
 
 # Exibir o gráfico no Streamlit
 st.pyplot(fig)
