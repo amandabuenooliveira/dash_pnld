@@ -12,18 +12,12 @@ st.write("Escolas do Brasil")
 
 col1, col2, col3 = st.columns(3)
 col1.metric("Alunado EM", "6.690.396")
-col2.metric("Wind", "9 mph", "-8%")
-col3.metric("Humidity", "86%", "4%")
+col2.metric("Professores EM", "4508.317")
+col3.metric("Escolas EM", "21.016")
 
-st.metric(label="Alunado EM", value="6.690.396")
 
-st.metric(label="Professores EM", value="4508.317")
 
-st.metric(label="Escolas EM", value="21.016")
-
-st.metric(label="Municípios com EM", value="5.570")
-
-st.metric(label="Estados com EM", value="27")
+st.metric(label="Municípios com EM", value="5.290, nas 27 UF")
 
 # Dados da tabela
 data = {
