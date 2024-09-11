@@ -44,26 +44,3 @@ st.subheader('Gráfico de Barras - Escolas com Médio por UF')
 st.bar_chart(df.set_index('uf')['escolas'])
 
 
-# Criar um gráfico com dois eixos y (um para escolas e outro para alunado médio)
-st.subheader('Gráfico de Barras - Escolas e Alunado Médio por UF')
-
-fig, ax1 = plt.subplots(figsize=(10, 6))
-
-# Eixo y1 para o número de escolas
-ax1.bar(df['uf'], df['escolas'], color='b', label='Escolas')
-ax1.set_xlabel('UF')
-ax1.set_ylabel('Número de Escolas', color='b')
-ax1.tick_params(axis='y', labelcolor='b')
-
-# Criar um segundo eixo y (compartilhando o mesmo eixo x)
-ax2 = ax1.twinx()
-ax2.plot(df['uf'], df['alunado medio'], color='r', marker='o', label='Alunado Médio')
-ax2.set_ylabel('Alunado Médio', color='r')
-ax2.tick_params(axis='y', labelcolor='r')
-
-# Exibir a legenda
-ax1.legend(loc='upper left')
-ax2.legend(loc='upper right')
-
-# Exibir o gráfico no Streamlit
-st.pyplot(fig)
