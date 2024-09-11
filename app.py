@@ -8,6 +8,13 @@ st.title('PNLD - Ensino Médio')
 
 st.write("Escolas do Brasil")
 
+
+
+col1, col2, col3 = st.columns(3)
+col1.metric("Alunado EM", "6.690.396")
+col2.metric("Wind", "9 mph", "-8%")
+col3.metric("Humidity", "86%", "4%")
+
 st.metric(label="Alunado EM", value="6.690.396")
 
 st.metric(label="Professores EM", value="4508.317")
